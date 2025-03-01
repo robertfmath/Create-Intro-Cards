@@ -1,0 +1,8 @@
+venv/
+output/
+__pycache__
+create_intro_cards.egg-info/
+.vscode/
+dist/
+.DS_Store
+docs/build/
