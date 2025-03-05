@@ -13,7 +13,8 @@ dependencies = [
     "pandas>=2.1.2",
     "matplotlib>=3.8.1",
     "Pillow>=10.1.0",
-    "ipykernel>=6.29.5"
+    "ipykernel>=6.29.5",
+
 ]
 classifiers = [
     "License :: OSI Approved :: BSD License",
@@ -33,7 +34,8 @@ dev = [
     "ruff>=0.9.9",
     "docformatter>=1.7.5",
     "Sphinx>=7.2.6",
-    "pypdf>=5"
+    "pypdf>=5",
+    "typing_extensions>=4.6"
 ]
 
 [project.urls]
