@@ -37,7 +37,7 @@ For a full list of dependencies&mdash;both direct and transitive&mdash;please re
 
 ## Installation
 
-With Python installed, simply run:
+With Python 3.11+, simply run:
 
 ```bash
 pip install create-intro-cards
