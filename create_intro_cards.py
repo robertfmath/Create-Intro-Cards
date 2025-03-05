@@ -418,7 +418,7 @@ def make_pdf_preview(
 
         if stats["people_with_photo_warnings"]:
             logger.info(
-                f"WARNING: Photos could not be found at the specified paths "
+                "WARNING: Photos could not be found at the specified paths "
                 "for the name(s) below. Please confirm the photo path(s).\n"
             )
             logger.info("\n".join(stats["people_with_photo_warnings"]))
@@ -560,7 +560,7 @@ def _make_figs(
                     photo_axes_bounds,
                     stats=stats,
                 )
-            fig.savefig(os.path.join(path_to_output_dir, f"figure{i+1}.png"))
+            fig.savefig(os.path.join(path_to_output_dir, f"figure{i + 1}.png"))
             start_ind += 4
 
 
@@ -775,7 +775,7 @@ def _make_card(
     name_text = _WrapText(
         name_x_coord,
         name_y_coord,
-        f'{row["Full Name"]}',
+        f"{row['Full Name']}",
         fontsize=name_font_size,
         width=1 - name_x_coord - name_right_padding,
         widthcoords=ax.transAxes,
@@ -833,7 +833,7 @@ def _make_card(
             except OSError:
                 person_status = "WARNING"
                 person_status_msg = (
-                    f"Could not read photo at `{row[photo_path_col]}`; " "default used"
+                    f"Could not read photo at `{row[photo_path_col]}`; default used"
                 )
                 stats["people_with_photo_warnings"].append(row["Full Name"])
                 img_to_open = path_to_default_photo
@@ -852,8 +852,7 @@ def _make_card(
     ax_inset.spines[["top", "bottom", "left", "right"]].set_linewidth(0.1)
 
     current_progress_for_logging_message = (
-        f'[{stats["number_of_cards_created"] + 1}'
-        f'/{stats["number_of_cards_to_create"]}]'
+        f"[{stats['number_of_cards_created'] + 1}/{stats['number_of_cards_to_create']}]"
     )
     person_logging_message = (
         f"{current_progress_for_logging_message} {person_status} "

@@ -1,27 +1,37 @@
 #!/bin/sh
 
-# This script automates the process of formatting the Python code (using Black), 
+# This script automates the process of formatting and linting the Python code (using Ruff), 
 # formatting docstrings (using docformatter), running tests, and locally building the project's  
 # documentation (using Sphinx). The GitHub Actions workflow expects formatting to have already been applied
 # and tests to have passed, so this is useful to run before pushing or creating a pull request. 
 
-# Run Black on create_intro_cards.py and test_create_intro_cards.py
-echo "Running Black on create_intro_cards.py"
-black create_intro_cards.py
-echo "Running Black on tests/test_create_intro_cards.py"
-black tests/test_create_intro_cards.py
+# Run Ruff formatting
+echo "Running Ruff format on create_intro_cards.py"
+ruff format create_intro_cards.py
+echo "Running Ruff format on tests/test_create_intro_cards.py"
+ruff format tests/test_create_intro_cards.py
 
 if [ $? -ne 0 ]; then
-    echo "Black formatting failed."
+    echo "Ruff formatting failed."
     exit 1
 fi
 
-# Run docformatter to format docstrings in accordance with Black 
-# Options specified in pyproject.toml
+# Run Ruff linting
+echo "Running Ruff lint on create_intro_cards.py"
+ruff check create_intro_cards.py
+echo "Running Ruff lint on tests/test_create_intro_cards.py"
+ruff check tests/test_create_intro_cards.py
+
+if [ $? -ne 0 ]; then
+    echo "Ruff linting failed."
+    exit 1
+fi
+
+# Run docformatter to format docstrings (wrapping at 88 characters, in line with Black)
 echo "Running docformatter on create_intro_cards.py"
-docformatter create_intro_cards.py
+docformatter --in-place create_intro_cards.py
 echo "Running docformatter on tests/test_create_intro_cards.py"
-docformatter tests/test_create_intro_cards.py
+docformatter --in-place tests/test_create_intro_cards.py
 
 if [ $? -ne 0 ]; then
     echo "Docformatter failed."

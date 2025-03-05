@@ -30,7 +30,7 @@ requires-python = ">=3.11"
 
 [project.optional-dependencies]
 dev = [
-    "black",
+    "ruff>=0.9.9",
     "docformatter>=1.7.5",
     "Sphinx>=7.2.6",
     "pypdf>=5"
@@ -39,6 +39,15 @@ dev = [
 [project.urls]
 Homepage = "https://www.github.com/robertfmath/Create-Intro-Cards"
 Documentation = "https://robertfmath.github.io/Create-Intro-Cards"
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
 
 [tool.docformatter]
 black = true

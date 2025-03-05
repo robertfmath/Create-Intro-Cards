@@ -1,4 +1,4 @@
-# Workflow for formatting, testing, and building documentation
+# Workflow for formatting and linting, testing, and building documentation
 name: CI
 
 on:
@@ -6,9 +6,11 @@ on:
     branches:
       - main
   pull_request:
+    branches:
+      - main
 
 jobs:
-  formatting:
+  format-and-lint:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
@@ -22,16 +24,19 @@ jobs:
         run: python -m pip install --upgrade pip
 
       - name: Install dependencies
-        run: python -m pip install black docformatter
+        run: python -m pip install ruff docformatter
 
-      - name: Format Python code with Black
-        run: black --check create_intro_cards.py tests/test_create_intro_cards.py
+      - name: Run Ruff formatting check
+        run: ruff format --check create_intro_cards.py tests/test_create_intro_cards.py
 
-      - name: Format docstrings with docformatter
+      - name: Run docformatter check
         run: docformatter --check create_intro_cards.py tests/test_create_intro_cards.py
 
+      - name: Run Ruff linting check
+        run: ruff check create_intro_cards.py tests/test_create_intro_cards.py
+
   test:
-    needs: formatting
+    needs: format-and-lint
     runs-on: ubuntu-22.04
     strategy:
       matrix:
