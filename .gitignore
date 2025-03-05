@@ -1,8 +1,18 @@
+# Virtual environment
 venv/
-output/
-__pycache__
-create_intro_cards.egg-info/
-.vscode/
+
+# Build and distribution directories
 dist/
-.DS_Store
+output/
+create_intro_cards.egg-info/
 docs/build/
+
+# Python cache files
+__pycache__/
+
+# Editor and system files
+.vscode/
+.DS_Store
+
+# Linter cache
+.ruff_cache/
