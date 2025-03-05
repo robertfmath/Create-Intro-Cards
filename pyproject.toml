@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "create-intro-cards"
-version = "0.1.0"
+version = "0.2.0"
 description = """A Python module to generate a PDF of intro cards from a dataset of individuals' attributes."""
 authors = [{name = "Bobby Math"}]
 license = {file = "LICENSE.txt"}
@@ -13,8 +13,7 @@ dependencies = [
     "pandas>=2.1.2",
     "matplotlib>=3.8.1",
     "Pillow>=10.1.0",
-    "ipykernel>=6.29.5",
-
+    "ipykernel>=6.29.5"
 ]
 classifiers = [
     "License :: OSI Approved :: BSD License",
