@@ -237,7 +237,7 @@ def make_pdf(
         first_img.save(
             os.path.join(path_to_output_dir, "intro_cards.pdf"),
             # dpi; same value as in plt.subplots() so inch dimensions are preserved
-            resolution=150,
+            resolution=175,
             save_all=True,
             append_images=(Image.open(path) for path in sorted_figure_image_paths[1:]),
         )
@@ -538,7 +538,7 @@ def _make_figs(
                 end_ind = start_ind + 4
             else:
                 end_ind = people_data.shape[0]
-            fig, axs = plt.subplots(2, 2, figsize=figure_size, dpi=150)
+            fig, axs = plt.subplots(2, 2, figsize=figure_size, dpi=175)
             fig.tight_layout(h_pad=0.1, w_pad=0.1)
             for ax in axs.ravel():
                 ax.axis("off")
