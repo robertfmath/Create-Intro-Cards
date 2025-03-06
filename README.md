@@ -9,16 +9,16 @@
 
 </div>
 
-`create-intro-cards` is a Python module that transforms a data set of individuals' names, photos, and custom attributes into a paginated PDF consisting of "intro cards" that describe each individual. Each intro card displays a person's name, their photo, and a series of attributes based on custom columns in the data set.
+`create-intro-cards` is a Python module that transforms a data set of individuals' names, photos, and custom attributes into a paginated PDF of "intro cards" that describe each individual. Each intro card displays a person's name, a photo, and a series of attributes based on custom columns in the data set.
 
 <p align="center">
-  <img src="https://github.com/robertfmath/Create-Intro-Cards/blob/main/docs/source/_static/images/example_output_page.png?raw=true" alt="An example of one page of output in the pdf" style="height: 500px; width: auto; object-fit: contain;">
+  <img src="https://github.com/robertfmath/Create-Intro-Cards/blob/main/docs/source/_static/images/example_output_page.png?raw=true" alt="An example of one page of output in the PDF" style="max-width: 100%; height: auto;">
 </p>
 
-The input to the main function — `make_pdf` — is a Pandas DataFrame, where rows represent individuals and columns their attributes. Columns containing individuals' first names, last names, and paths to their photos are required, but the content (and number) of other columns is arbitrary and completely up to the user.
+The input to the main function&mdash;`make_pdf`&mdash;is a Pandas DataFrame, where rows represent individuals and columns their attributes. Columns containing individuals' first names, last names, and paths to photos are required, but the content (and number) of other columns is arbitrary and can be freely customized.
 
 <p align="center">
-  <img src="https://github.com/robertfmath/Create-Intro-Cards/blob/main/docs/source/_static/images/example_people_data.png?raw=true" alt="An example of the structure of the input Pandas DataFrame" style="height: 150; width: auto; object-fit: contain;">
+  <img src="https://github.com/robertfmath/Create-Intro-Cards/blob/main/docs/source/_static/images/example_people_data.png?raw=true" alt="An example of the structure of the input Pandas DataFrame" style="max-width: 100%; height: auto;">
 </p>
 
 These arbitrary columns are used to generate a series of "column name: attribute value" pairings (e.g., "Hometown: New York, NY") for each individual, which is then plotted below their name on their intro card. If an individual doesn't have a value listed for any arbitrary column, that column's "column name: attribute value" pairing will be omitted from their card.
@@ -33,11 +33,11 @@ The shareable output PDF contains all individuals' intro cards, four per page. I
 - Pillow
 - ipykernel
 
-For a full list of dependencies&mdash;both direct and transitive&mdash;please refer to the provided `requirements.txt` file. The `requirements-dev.txt` file provides additional dependencies for development — namely Black, docformatter, Sphinx, and pypdf.
+For a full list of dependencies&mdash;both direct and transitive&mdash;please refer to the provided `requirements.txt` file. The `requirements-dev.txt` file provides additional dependencies for development&mdash;namely Ruff, docformatter, Sphinx, and pypdf.
 
 ## Installation
 
-With Python 3.11+, simply run:
+With Python 3.11+ installed, simply run:
 
 ```bash
 pip install create-intro-cards
@@ -45,7 +45,7 @@ pip install create-intro-cards
 
 ## Usage
 
-The entrypoint of the module is the function `make_pdf`, which generates a PDF containing intro cards for all the individuals in the input Pandas DataFrame. The function is passed this DataFrame; the names of the columns in the DataFrame that house first names, last names, and paths to individuals' photos; a path to a default photo to use in the event an individual doesn't have a photo path listed; and a path to the directory in which to store the output.
+The entry point of the module is the function `make_pdf`, which generates a PDF containing intro cards for all the individuals in the input Pandas DataFrame. The function is passed this DataFrame; the names of the columns in the DataFrame that house first names, last names, and paths to individuals' photos; a path to a default photo to use in the event an individual doesn't have a photo path listed; and a path to the directory in which to store the output.
 
 ```python
 from create_intro_cards import make_pdf
