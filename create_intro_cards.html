@@ -67,15 +67,15 @@
 a single Matplotlib figure, which is itself composed of four individuals’ intro
 cards. Each intro card contains an individual’s name, a photo (either provided or
 default), and a description that displays their “column name: attribute value”
-pairings for each “arbitrary” column in <code class="docutils literal notranslate"><span class="pre">people_data</span></code> (i.e., columns not related
-to name and photo path).</p>
+pairings for each custom column in <code class="docutils literal notranslate"><span class="pre">people_data</span></code> (i.e., columns not related to
+name and photo path).</p>
 <p>On each intro card, “column name: attribute value” pairings are separated by a new
 line, and each “column name” is rendered in bold. Text on any given line is wrapped
 such that it approaches—but does not touch—the right border of the card. If an
 individual’s “attribute value” is left blank, that particular “column name:
-attribute value” pairing will be omitted from their card. Note that if the name of
-an arbitrary column contains <code class="docutils literal notranslate"><span class="pre">~</span></code>, <code class="docutils literal notranslate"><span class="pre">^</span></code>, or <code class="docutils literal notranslate"><span class="pre">\</span></code>, that character will be removed
-from the column name on the intro card.</p>
+attribute value” pairing will be omitted from their card. Note that if the name of a
+custom column contains <code class="docutils literal notranslate"><span class="pre">~</span></code>, <code class="docutils literal notranslate"><span class="pre">^</span></code>, or <code class="docutils literal notranslate"><span class="pre">\</span></code>, that character will be removed from
+the column name on the intro card.</p>
 <p>This function also provides parameters to tweak the formatting and layout of all
 individuals’ intro cards, such as <code class="docutils literal notranslate"><span class="pre">name_x_coord</span></code>, <code class="docutils literal notranslate"><span class="pre">desc_padding`,</span> <span class="pre">and</span>
 <span class="pre">``photo_axes_bounds</span></code>. Using :func:<code class="docutils literal notranslate"><span class="pre">make_pdf_preview</span></code> (Jupyter environment
@@ -626,11 +626,11 @@ introducing floating-point error. Private function.</p>
 function.</p>
 <p>This function replaces null values with empty strings, converts all values to
 strings, and trims whitespace. It also creates a “Full Name” column by combining the
-first and last name columns. Non-name and non-photo columns are formatted for
-MathTeX compatibility by removing forbidden characters (~, ^, ) from column names,
-escaping special MathTeX characters (space, #, $, %, _, {, }) in column names, and
-escaping dollar signs ($) in column values. Name-related and photo path columns
-retain their original column names.</p>
+first and last name columns. Custom columns are formatted for MathTeX compatibility
+by removing forbidden characters (~, ^, ) from column names, escaping special
+MathTeX characters (space, #, $, %, _, {, }) in column names, and escaping dollar
+signs ($) in column values. Name-related and photo path columns retain their
+original column names.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
