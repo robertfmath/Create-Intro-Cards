@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "create-intro-cards"
-version = "0.2.0"
+version = "1.0.0"
 description = """A Python module to generate a PDF of intro cards from a dataset of individuals' attributes."""
 authors = [{name = "Bobby Math"}]
 license = {file = "LICENSE.txt"}
