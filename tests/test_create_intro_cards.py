@@ -303,7 +303,7 @@ class TestFormatDataAndDeriveFullNames(unittest.TestCase):
         )
         self.assertEqual(result.iloc[0]["Full Name"], "John Doe")
 
-    def test_dollar_signs_escaped_in_values_of_non_name_photo_columns(self):
+    def test_dollar_signs_escaped_in_values_of_custom_columns(self):
         df = pd.DataFrame(
             {
                 "First Name": ["John $"],
@@ -321,7 +321,7 @@ class TestFormatDataAndDeriveFullNames(unittest.TestCase):
         # Values in name/photo columns should not be escaped
         self.assertEqual(result.iloc[0]["First Name"], "John $")
 
-    def test_whitespace_stripped_from_non_name_photo_column_names(self):
+    def test_whitespace_stripped_from_custom_column_names(self):
         df = pd.DataFrame(
             {
                 " First Name ": ["John"],
@@ -339,7 +339,7 @@ class TestFormatDataAndDeriveFullNames(unittest.TestCase):
         self.assertIn(" First Name ", result.columns)
         self.assertIn(" Photo Path ", result.columns)
 
-    def test_mathtex_formatting_for_non_name_photo_column_names(self):
+    def test_mathtex_formatting_for_custom_column_names(self):
         df = pd.DataFrame(
             {
                 " First Name": ["John"],

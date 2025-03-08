@@ -56,16 +56,16 @@ def make_pdf(
     a single Matplotlib figure, which is itself composed of four individuals' intro
     cards. Each intro card contains an individual's name, a photo (either provided or
     default), and a description that displays their "column name: attribute value"
-    pairings for each "arbitrary" column in ``people_data`` (i.e., columns not related
-    to name and photo path).
+    pairings for each custom column in ``people_data`` (i.e., columns not related to
+    name and photo path).
 
     On each intro card, "column name: attribute value" pairings are separated by a new
     line, and each "column name" is rendered in bold. Text on any given line is wrapped
     such that it approaches—but does not touch—the right border of the card. If an
     individual's "attribute value" is left blank, that particular "column name:
-    attribute value" pairing will be omitted from their card. Note that if the name of
-    an arbitrary column contains ``~``, ``^``, or ``\``, that character will be removed
-    from the column name on the intro card.
+    attribute value" pairing will be omitted from their card. Note that if the name of a
+    custom column contains ``~``, ``^``, or ``\``, that character will be removed from
+    the column name on the intro card.
 
     This function also provides parameters to tweak the formatting and layout of all
     individuals' intro cards, such as ``name_x_coord``, ``desc_padding`, and
@@ -1024,11 +1024,11 @@ def _format_data_and_derive_full_names(
 
     This function replaces null values with empty strings, converts all values to
     strings, and trims whitespace. It also creates a "Full Name" column by combining the
-    first and last name columns. Non-name and non-photo columns are formatted for
-    MathTeX compatibility by removing forbidden characters (~, ^, \) from column names,
-    escaping special MathTeX characters (space, #, $, %, _, {, }) in column names, and
-    escaping dollar signs ($) in column values. Name-related and photo path columns
-    retain their original column names.
+    first and last name columns. Custom columns are formatted for MathTeX compatibility
+    by removing forbidden characters (~, ^, \) from column names, escaping special
+    MathTeX characters (space, #, $, %, _, {, }) in column names, and escaping dollar
+    signs ($) in column values. Name-related and photo path columns retain their
+    original column names.
 
     :param df: DataFrame to process, containing individual records with their attributes
     :type df: pd.DataFrame
@@ -1047,7 +1047,7 @@ def _format_data_and_derive_full_names(
 
     name_and_photo_cols = ["Full Name", first_name_col, last_name_col, photo_path_col]
 
-    # Format non-name/photo columns for Mathtex
+    # Format custom columns for Mathtex
     forbidden_chars_in_col_names = ["~", "^", "\\"]
     prepend_with_backslash_in_col_names = [" ", "#", "$", "%", "_", "{", "}"]
 
