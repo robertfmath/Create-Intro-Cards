@@ -52,22 +52,25 @@ def make_pdf(
 ) -> StatsDict:
     """Generate a PDF containing intro cards for all individuals in ``people_data``.
 
-    This is entrypoint of the module. It generates a PDF, where each page of the PDF is
+    This is entry point of the module. It generates a PDF, where each page of the PDF is
     a single Matplotlib figure, which is itself composed of four individuals' intro
-    cards. Each intro card contains an individual's name, their photo (either provided
-    or default), and a description that displays their "column name: attribute value"
-    pairings for each column in ``people_data`` (except ones related to their name and
-    their photo path).
+    cards. Each intro card contains an individual's name, a photo (either provided or
+    default), and a description that displays their "column name: attribute value"
+    pairings for each "arbitrary" column in ``people_data`` (i.e., columns not related
+    to name and photo path).
 
     On each intro card, "column name: attribute value" pairings are separated by a new
     line, and each "column name" is rendered in bold. Text on any given line is wrapped
-    such that it approaches -- but does not touch -- the right border of the card. If an
+    such that it approaches—but does not touch—the right border of the card. If an
     individual's "attribute value" is left blank, that particular "column name:
-    attribute value" pairing will be omitted from their card. This function also
-    provides parameters to tweak the formatting and layout of all individuals' intro
-    cards, such as ``name_x_coord``, ``desc_padding`, and ``photo_axes_bounds``. Using
-    :func:``make_pdf_preview`` (Jupyter environment required) allows for quick feedback
-    on how these parameters affect the cards.
+    attribute value" pairing will be omitted from their card. Note that if the name of
+    an arbitrary column contains ``~``, ``^``, or ``\``, that character will be removed
+    from the column name on the intro card.
+
+    This function also provides parameters to tweak the formatting and layout of all
+    individuals' intro cards, such as ``name_x_coord``, ``desc_padding`, and
+    ``photo_axes_bounds``. Using :func:``make_pdf_preview`` (Jupyter environment
+    required) allows for quick feedback on how these parameters affect the cards.
 
     The output PDF is saved down in ``path_to_output_dir``. Also in this directory are
     the constituent pages of the PDF (PNG images of the Matplotlib figures, as rendered
@@ -86,8 +89,8 @@ def make_pdf(
         those individuals. The choice of attributes is completely up to the user (e.g.,
         "Hometown", "Fun Fact"), but it is required that there be columns for first
         name, last name, and paths to individuals' photos (which will ultimately be
-        displayed on their respective intro cards). The name of each column -- except
-        the ones for first name, last name, and photo paths -- will ultimately end up
+        displayed on their respective intro cards). The name of each column—except
+        the ones for first name, last name, and photo paths—will ultimately end up
         being listed on individuals' intro cards in bold. The order of these columns
         dictates the order in which "column name: attribute value" pairings are
         displayed on the cards.
@@ -297,8 +300,8 @@ def make_pdf_preview(
         those individuals. The choice of attributes is completely up to the user (e.g.,
         "Hometown", "Fun Fact"), but it is required that there be columns for first
         name, last name, and paths to individuals' photos (which will ultimately be
-        displayed on their respective intro cards). The name of each column -- except
-        the ones for first name, last name, and photo paths -- will ultimately end up
+        displayed on their respective intro cards). The name of each column—except
+        the ones for first name, last name, and photo paths—will ultimately end up
         being listed on individuals' intro cards in bold. The order of these columns
         dictates the order in which "column name: attribute value" pairings are
         displayed on the cards.
@@ -459,8 +462,8 @@ def _make_figs(
         those individuals. The choice of attributes is completely up to the user (e.g.,
         "Hometown", "Fun Fact"), but it is required that there be columns for first
         name, last name, and paths to individuals' photos (which will ultimately be
-        displayed on their respective intro cards). The name of each column -- except
-        the ones for first name, last name, and photo paths -- will ultimately end up
+        displayed on their respective intro cards). The name of each column—except
+        the ones for first name, last name, and photo paths—will ultimately end up
         being listed on individuals' intro cards in bold. The order of these columns
         dictates the order in which "column name: attribute value" pairings are
         displayed on the cards.
@@ -593,8 +596,8 @@ def _make_fig_preview(
         those individuals. The choice of attributes is completely up to the user (e.g.,
         "Hometown", "Fun Fact"), but it is required that there be columns for first
         name, last name, and paths to individuals' photos (which will ultimately be
-        displayed on their respective intro cards). The name of each column -- except
-        the ones for first name, last name, and photo paths -- will ultimately end up
+        displayed on their respective intro cards). The name of each column—except
+        the ones for first name, last name, and photo paths—will ultimately end up
         being listed on individuals' intro cards in bold. The order of these columns
         dictates the order in which "column name: attribute value" pairings are
         displayed on the cards.
@@ -871,7 +874,7 @@ def _get_description_string_from_row(
 
     Each "column name: attribute value" pairing is separated by a new line, and each
     "column name" is bolded (by wrapping it in appropriate Mathtex characters). Text on
-    any given line is wrapped, such that it approaches -- but does not touch -- the
+    any given line is wrapped, such that it approaches—but does not touch—the
     right border of the card. If an individual's "attribute value" is left blank, then
     that particular "column name: attribute value" pairing will be omitted from the
     description string.
@@ -909,8 +912,8 @@ class _WrapText(Text):
     be wrapped when a line reaches a certain width (in effect forming a text box).
     Private class.
 
-    With this class, the user can specify the maximum width -- in units of
-    ``widthcoords`` -- of a Matplotlib :class:`Text` instance. If the addition of any
+    With this class, the user can specify the maximum width—in units of
+    ``widthcoords``—of a Matplotlib :class:`Text` instance. If the addition of any
     character or word to a line would bring the length of that line beyond the maximum
     width, a new line will be inserted and that character or word will start the new
     line. The class does this by inhering from :class:`matplotlib.text.Text` and
@@ -1022,7 +1025,7 @@ def _format_data_and_derive_full_names(
     This function replaces null values with empty strings, converts all values to
     strings, and trims whitespace. It also creates a "Full Name" column by combining the
     first and last name columns. Non-name and non-photo columns are formatted for
-    MathTeX compatibility by removing forbidden characters (~, ^, \\) from column names,
+    MathTeX compatibility by removing forbidden characters (~, ^, \) from column names,
     escaping special MathTeX characters (space, #, $, %, _, {, }) in column names, and
     escaping dollar signs ($) in column values. Name-related and photo path columns
     retain their original column names.

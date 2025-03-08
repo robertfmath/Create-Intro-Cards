@@ -351,6 +351,7 @@ class TestFormatDataAndDeriveFullNames(unittest.TestCase):
                 "Fun_Fact": ["Likes {math}"],
                 "Notes~": ["Something"],
                 "Skills^2": ["Coding"],
+                "Intere\\sts": ["Cooking"],
             }
         )
         result = create_intro_cards._format_data_and_derive_full_names(
@@ -364,6 +365,7 @@ class TestFormatDataAndDeriveFullNames(unittest.TestCase):
         # Check that forbidden characters are removed
         self.assertIn("Notes", result.columns)
         self.assertIn("Skills2", result.columns)
+        self.assertIn("Interests", result.columns)
         # Check that name/photo columns are unchanged
         self.assertIn(" First Name", result.columns)
         self.assertIn("Last Name$", result.columns)
