@@ -63,21 +63,23 @@
 <dt class="sig sig-object py" id="create_intro_cards.make_pdf">
 <span class="sig-prename descclassname"><span class="pre">create_intro_cards.</span></span><span class="sig-name descname"><span class="pre">make_pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">people_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">first_name_col</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_name_col</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">photo_path_col</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_to_default_photo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path_to_output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'./intro_cards_output'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figure_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">(23,</span> <span class="pre">13)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_x_coord</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.35</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_y_coord</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.95</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_font_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desc_padding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desc_font_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">photo_axes_bounds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">(0.02,</span> <span class="pre">0.02,</span> <span class="pre">0.3,</span> <span class="pre">0.93)</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#create_intro_cards.StatsDict" title="create_intro_cards.StatsDict"><span class="pre">StatsDict</span></a></span></span><a class="headerlink" href="#create_intro_cards.make_pdf" title="Link to this definition">¶</a></dt>
 <dd><p>Generate a PDF containing intro cards for all individuals in <code class="docutils literal notranslate"><span class="pre">people_data</span></code>.</p>
-<p>This is entrypoint of the module. It generates a PDF, where each page of the PDF is
+<p>This is entry point of the module. It generates a PDF, where each page of the PDF is
 a single Matplotlib figure, which is itself composed of four individuals’ intro
-cards. Each intro card contains an individual’s name, their photo (either provided
-or default), and a description that displays their “column name: attribute value”
-pairings for each column in <code class="docutils literal notranslate"><span class="pre">people_data</span></code> (except ones related to their name and
-their photo path).</p>
+cards. Each intro card contains an individual’s name, a photo (either provided or
+default), and a description that displays their “column name: attribute value”
+pairings for each “arbitrary” column in <code class="docutils literal notranslate"><span class="pre">people_data</span></code> (i.e., columns not related
+to name and photo path).</p>
 <p>On each intro card, “column name: attribute value” pairings are separated by a new
 line, and each “column name” is rendered in bold. Text on any given line is wrapped
-such that it approaches – but does not touch – the right border of the card. If an
+such that it approaches—but does not touch—the right border of the card. If an
 individual’s “attribute value” is left blank, that particular “column name:
-attribute value” pairing will be omitted from their card. This function also
-provides parameters to tweak the formatting and layout of all individuals’ intro
-cards, such as <code class="docutils literal notranslate"><span class="pre">name_x_coord</span></code>, <code class="docutils literal notranslate"><span class="pre">desc_padding`,</span> <span class="pre">and</span> <span class="pre">``photo_axes_bounds</span></code>. Using
-:func:<code class="docutils literal notranslate"><span class="pre">make_pdf_preview</span></code> (Jupyter environment required) allows for quick feedback
-on how these parameters affect the cards.</p>
+attribute value” pairing will be omitted from their card. Note that if the name of
+an arbitrary column contains <code class="docutils literal notranslate"><span class="pre">~</span></code>, <code class="docutils literal notranslate"><span class="pre">^</span></code>, or <code class="docutils literal notranslate"><span class="pre">\</span></code>, that character will be removed
+from the column name on the intro card.</p>
+<p>This function also provides parameters to tweak the formatting and layout of all
+individuals’ intro cards, such as <code class="docutils literal notranslate"><span class="pre">name_x_coord</span></code>, <code class="docutils literal notranslate"><span class="pre">desc_padding`,</span> <span class="pre">and</span>
+<span class="pre">``photo_axes_bounds</span></code>. Using :func:<code class="docutils literal notranslate"><span class="pre">make_pdf_preview</span></code> (Jupyter environment
+required) allows for quick feedback on how these parameters affect the cards.</p>
 <p>The output PDF is saved down in <code class="docutils literal notranslate"><span class="pre">path_to_output_dir</span></code>. Also in this directory are
 the constituent pages of the PDF (PNG images of the Matplotlib figures, as rendered
 using the Agg backend) and a logging file that denotes the names and photo
@@ -96,11 +98,11 @@ intro cards. Rows represent individuals, while columns represent attributes of
 those individuals. The choice of attributes is completely up to the user (e.g.,
 “Hometown”, “Fun Fact”), but it is required that there be columns for first
 name, last name, and paths to individuals’ photos (which will ultimately be
-displayed on their respective intro cards). The name of each column – except
-the ones for first name, last name, and photo paths – will ultimately end up
-being listed on individuals’ intro cards in bold. The order of these columns
-dictates the order in which “column name: attribute value” pairings are
-displayed on the cards.</p></li>
+displayed on their respective intro cards). The name of each column—except the
+ones for first name, last name, and photo paths—will ultimately end up being
+listed on individuals’ intro cards in bold. The order of these columns dictates
+the order in which “column name: attribute value” pairings are displayed on the
+cards.</p></li>
 <li><p><strong>first_name_col</strong> (<em>str</em>) – The name of the column (Series) in <code class="docutils literal notranslate"><span class="pre">people_data</span></code> that
 houses first names</p></li>
 <li><p><strong>last_name_col</strong> (<em>str</em>) – The name of the column (Series) in <code class="docutils literal notranslate"><span class="pre">people_data</span></code> that houses
@@ -190,11 +192,11 @@ intro cards. Rows represent individuals, while columns represent attributes of
 those individuals. The choice of attributes is completely up to the user (e.g.,
 “Hometown”, “Fun Fact”), but it is required that there be columns for first
 name, last name, and paths to individuals’ photos (which will ultimately be
-displayed on their respective intro cards). The name of each column – except
-the ones for first name, last name, and photo paths – will ultimately end up
-being listed on individuals’ intro cards in bold. The order of these columns
-dictates the order in which “column name: attribute value” pairings are
-displayed on the cards.</p></li>
+displayed on their respective intro cards). The name of each column—except the
+ones for first name, last name, and photo paths—will ultimately end up being
+listed on individuals’ intro cards in bold. The order of these columns dictates
+the order in which “column name: attribute value” pairings are displayed on the
+cards.</p></li>
 <li><p><strong>first_name_col</strong> (<em>str</em>) – The name of the column (Series) in <code class="docutils literal notranslate"><span class="pre">people_data</span></code> that
 houses first names</p></li>
 <li><p><strong>last_name_col</strong> (<em>str</em>) – The name of the column (Series) in <code class="docutils literal notranslate"><span class="pre">people_data</span></code> that houses
@@ -272,11 +274,11 @@ intro cards. Rows represent individuals, while columns represent attributes of
 those individuals. The choice of attributes is completely up to the user (e.g.,
 “Hometown”, “Fun Fact”), but it is required that there be columns for first
 name, last name, and paths to individuals’ photos (which will ultimately be
-displayed on their respective intro cards). The name of each column – except
-the ones for first name, last name, and photo paths – will ultimately end up
-being listed on individuals’ intro cards in bold. The order of these columns
-dictates the order in which “column name: attribute value” pairings are
-displayed on the cards.</p></li>
+displayed on their respective intro cards). The name of each column—except the
+ones for first name, last name, and photo paths—will ultimately end up being
+listed on individuals’ intro cards in bold. The order of these columns dictates
+the order in which “column name: attribute value” pairings are displayed on the
+cards.</p></li>
 <li><p><strong>first_name_col</strong> (<em>str</em>) – The name of the column (Series) in <code class="docutils literal notranslate"><span class="pre">people_data</span></code> that
 houses first names</p></li>
 <li><p><strong>last_name_col</strong> (<em>str</em>) – The name of the column (Series) in <code class="docutils literal notranslate"><span class="pre">people_data</span></code> that houses
@@ -352,11 +354,11 @@ intro cards. Rows represent individuals, while columns represent attributes of
 those individuals. The choice of attributes is completely up to the user (e.g.,
 “Hometown”, “Fun Fact”), but it is required that there be columns for first
 name, last name, and paths to individuals’ photos (which will ultimately be
-displayed on their respective intro cards). The name of each column – except
-the ones for first name, last name, and photo paths – will ultimately end up
-being listed on individuals’ intro cards in bold. The order of these columns
-dictates the order in which “column name: attribute value” pairings are
-displayed on the cards.</p></li>
+displayed on their respective intro cards). The name of each column—except the
+ones for first name, last name, and photo paths—will ultimately end up being
+listed on individuals’ intro cards in bold. The order of these columns dictates
+the order in which “column name: attribute value” pairings are displayed on the
+cards.</p></li>
 <li><p><strong>first_name_col</strong> (<em>str</em>) – The name of the column (Series) in <code class="docutils literal notranslate"><span class="pre">people_data</span></code> that
 houses first names</p></li>
 <li><p><strong>last_name_col</strong> (<em>str</em>) – The name of the column (Series) in <code class="docutils literal notranslate"><span class="pre">people_data</span></code> that houses
@@ -479,9 +481,9 @@ attribute value” pairings for each column in <code class="docutils literal not
 to names or photo path). Private function.</p>
 <p>Each “column name: attribute value” pairing is separated by a new line, and each
 “column name” is bolded (by wrapping it in appropriate Mathtex characters). Text on
-any given line is wrapped, such that it approaches – but does not touch – the
-right border of the card. If an individual’s “attribute value” is left blank, then
-that particular “column name: attribute value” pairing will be omitted from the
+any given line is wrapped, such that it approaches—but does not touch—the right
+border of the card. If an individual’s “attribute value” is left blank, then that
+particular “column name: attribute value” pairing will be omitted from the
 description string.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -512,8 +514,8 @@ attribute value” pairings of <cite>row</cite></p>
 <dd><p>Extend the functionality of <code class="xref py py-class docutils literal notranslate"><span class="pre">matplotlib.text.Text</span></code> by allowing for text to
 be wrapped when a line reaches a certain width (in effect forming a text box).
 Private class.</p>
-<p>With this class, the user can specify the maximum width – in units of
-<code class="docutils literal notranslate"><span class="pre">widthcoords</span></code> – of a Matplotlib <code class="xref py py-class docutils literal notranslate"><span class="pre">Text</span></code> instance. If the addition of any
+<p>With this class, the user can specify the maximum width—in units of
+<code class="docutils literal notranslate"><span class="pre">widthcoords</span></code>—of a Matplotlib <code class="xref py py-class docutils literal notranslate"><span class="pre">Text</span></code> instance. If the addition of any
 character or word to a line would bring the length of that line beyond the maximum
 width, a new line will be inserted and that character or word will start the new
 line. The class does this by inhering from <code class="xref py py-class docutils literal notranslate"><span class="pre">matplotlib.text.Text</span></code> and
