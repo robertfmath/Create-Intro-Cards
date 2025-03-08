@@ -89,11 +89,11 @@ def make_pdf(
         those individuals. The choice of attributes is completely up to the user (e.g.,
         "Hometown", "Fun Fact"), but it is required that there be columns for first
         name, last name, and paths to individuals' photos (which will ultimately be
-        displayed on their respective intro cards). The name of each column—except
-        the ones for first name, last name, and photo paths—will ultimately end up
-        being listed on individuals' intro cards in bold. The order of these columns
-        dictates the order in which "column name: attribute value" pairings are
-        displayed on the cards.
+        displayed on their respective intro cards). The name of each column—except the
+        ones for first name, last name, and photo paths—will ultimately end up being
+        listed on individuals' intro cards in bold. The order of these columns dictates
+        the order in which "column name: attribute value" pairings are displayed on the
+        cards.
     :type people_data: pd.DataFrame
     :param first_name_col: The name of the column (Series) in ``people_data`` that
         houses first names
@@ -300,11 +300,11 @@ def make_pdf_preview(
         those individuals. The choice of attributes is completely up to the user (e.g.,
         "Hometown", "Fun Fact"), but it is required that there be columns for first
         name, last name, and paths to individuals' photos (which will ultimately be
-        displayed on their respective intro cards). The name of each column—except
-        the ones for first name, last name, and photo paths—will ultimately end up
-        being listed on individuals' intro cards in bold. The order of these columns
-        dictates the order in which "column name: attribute value" pairings are
-        displayed on the cards.
+        displayed on their respective intro cards). The name of each column—except the
+        ones for first name, last name, and photo paths—will ultimately end up being
+        listed on individuals' intro cards in bold. The order of these columns dictates
+        the order in which "column name: attribute value" pairings are displayed on the
+        cards.
     :type people_data: pd.DataFrame
     :param first_name_col: The name of the column (Series) in ``people_data`` that
         houses first names
@@ -462,11 +462,11 @@ def _make_figs(
         those individuals. The choice of attributes is completely up to the user (e.g.,
         "Hometown", "Fun Fact"), but it is required that there be columns for first
         name, last name, and paths to individuals' photos (which will ultimately be
-        displayed on their respective intro cards). The name of each column—except
-        the ones for first name, last name, and photo paths—will ultimately end up
-        being listed on individuals' intro cards in bold. The order of these columns
-        dictates the order in which "column name: attribute value" pairings are
-        displayed on the cards.
+        displayed on their respective intro cards). The name of each column—except the
+        ones for first name, last name, and photo paths—will ultimately end up being
+        listed on individuals' intro cards in bold. The order of these columns dictates
+        the order in which "column name: attribute value" pairings are displayed on the
+        cards.
     :type people_data: pd.DataFrame
     :param first_name_col: The name of the column (Series) in ``people_data`` that
         houses first names
@@ -596,11 +596,11 @@ def _make_fig_preview(
         those individuals. The choice of attributes is completely up to the user (e.g.,
         "Hometown", "Fun Fact"), but it is required that there be columns for first
         name, last name, and paths to individuals' photos (which will ultimately be
-        displayed on their respective intro cards). The name of each column—except
-        the ones for first name, last name, and photo paths—will ultimately end up
-        being listed on individuals' intro cards in bold. The order of these columns
-        dictates the order in which "column name: attribute value" pairings are
-        displayed on the cards.
+        displayed on their respective intro cards). The name of each column—except the
+        ones for first name, last name, and photo paths—will ultimately end up being
+        listed on individuals' intro cards in bold. The order of these columns dictates
+        the order in which "column name: attribute value" pairings are displayed on the
+        cards.
     :type people_data: pd.DataFrame
     :param first_name_col: The name of the column (Series) in ``people_data`` that
         houses first names
@@ -874,9 +874,9 @@ def _get_description_string_from_row(
 
     Each "column name: attribute value" pairing is separated by a new line, and each
     "column name" is bolded (by wrapping it in appropriate Mathtex characters). Text on
-    any given line is wrapped, such that it approaches—but does not touch—the
-    right border of the card. If an individual's "attribute value" is left blank, then
-    that particular "column name: attribute value" pairing will be omitted from the
+    any given line is wrapped, such that it approaches—but does not touch—the right
+    border of the card. If an individual's "attribute value" is left blank, then that
+    particular "column name: attribute value" pairing will be omitted from the
     description string.
 
     :param row: The row in ``people_data`` to describe. Each row represents an
