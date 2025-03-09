@@ -52,8 +52,8 @@ def make_pdf(
 ) -> StatsDict:
     """Generate a PDF containing intro cards for all individuals in ``people_data``.
 
-    This is entry point of the module. It generates a PDF, where each page of the PDF is
-    a single Matplotlib figure, which is itself composed of four individuals' intro
+    This is entry point of the package. It generates a PDF, where each page of the PDF
+    is a single Matplotlib figure, which is itself composed of four individuals' intro
     cards. Each intro card contains an individual's name, a photo (either provided or
     default), and a description that displays their "column name: attribute value"
     pairings for each custom column in ``people_data`` (i.e., columns not related to

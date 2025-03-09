@@ -45,7 +45,7 @@ pip install create-intro-cards
 
 ## Usage
 
-The entry point of the module is the function `make_pdf`, which generates a PDF containing intro cards for all the individuals in the input Pandas DataFrame. The function is passed this DataFrame; the names of the columns in the DataFrame that house first names, last names, and paths to individuals' photos; a path to a default photo to use in the event an individual doesn't have a photo path listed; and a path to the directory in which to store the output.
+The entry point of the package is the function `make_pdf`, which generates a PDF containing intro cards for all the individuals in the input Pandas DataFrame. The function is passed this DataFrame; the names of the columns in the DataFrame that house first names, last names, and paths to individuals' photos; a path to a default photo to use in the event an individual doesn't have a photo path listed; and a path to the directory in which to store the output.
 
 ```python
 from create_intro_cards import make_pdf
