@@ -9,7 +9,7 @@
 
 </div>
 
-`create-intro-cards` is a Python package that converts a dataset of individuals' names, photos, and custom attributes into a clean, shareable PDF of “intro cards” that describe each individual—all with a single function call. Each intro card displays a person's name, a photo, and a series of attributes based on custom columns in the dataset.
+`create-intro-cards` is a Python package that converts a dataset of individuals' names, photos, and custom attributes into a PDF of “intro cards” that describe each individual—all with a single function call. Each intro card displays a person's name, a photo, and a series of attributes based on custom columns in the dataset.
 
 <p align="center">
   <img src="https://github.com/robertfmath/Create-Intro-Cards/blob/main/docs/source/_static/images/example_output_page.png?raw=true" alt="An example of one page of output in the PDF" style="max-width: 100%; height: auto;">
