@@ -9,7 +9,7 @@
 
 </div>
 
-`create-intro-cards` is a Python package that converts a dataset of individuals' names, photos, and attributes into a visually appealing, easily shareable PDF of "intro cards." Each intro card displays a person's name, a photo, and a series of attributes based on custom columns in the dataset.
+`create-intro-cards` is a Python package that converts a dataset of individuals' names, photos, and custom attributes into a clean, shareable PDF of “intro cards” that describe each individual—all with a single function call. Each intro card displays a person's name, a photo, and a series of attributes based on custom columns in the dataset.
 
 <p align="center">
   <img src="https://github.com/robertfmath/Create-Intro-Cards/blob/main/docs/source/_static/images/example_output_page.png?raw=true" alt="An example of one page of output in the PDF" style="max-width: 100%; height: auto;">
@@ -23,7 +23,7 @@ The input is a Pandas DataFrame, where rows represent individuals and columns th
 
 These custom columns are used to generate a series of "column name: attribute value" pairings (e.g., "Hometown: New York, NY") for each individual, which appears below their name on their intro card. If an individual doesn't have a value listed for any custom column, that column's "column name: attribute value" pairing is omitted from their card.
 
-The generated PDF contains all individuals' intro cards, arranged four per page. It's a simple way to transform a dataset of individuals' attributes&mdash;collected from sources such as surveys&mdash;into a fun, visually appealing, and easily shareable summary.
+The generated PDF contains all individuals' intro cards, arranged four per page. It's a simple way to transform a dataset of individuals' attributes&mdash;collected from sources such as surveys&mdash;into a fun, easily shareable visual summary.
 
 ## Dependencies
 
@@ -37,7 +37,7 @@ For a full list of dependencies&mdash;both direct and transitive&mdash;please re
 
 ## Installation
 
-With Python 3.11+ installed, simply run:
+With Python 3.11+ installed, run:
 
 ```bash
 pip install create-intro-cards
