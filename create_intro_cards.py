@@ -68,9 +68,9 @@ def make_pdf(
     the column name on the intro card.
 
     This function also provides parameters to tweak the formatting and layout of all
-    individuals' intro cards, such as ``name_x_coord``, ``desc_padding`, and
-    ``photo_axes_bounds``. Using :func:``make_pdf_preview`` (Jupyter environment
-    required) allows for quick feedback on how these parameters affect the cards.
+    individuals' intro cards, such as ``name_x_coord``, ``desc_padding``, and
+    ``photo_axes_bounds``. Using :func:`make_pdf_preview` (Jupyter environment required)
+    allows for quick feedback on how these parameters affect the cards.
 
     The output PDF is saved down in ``path_to_output_dir``. Also in this directory are
     the constituent pages of the PDF (PNG images of the Matplotlib figures, as rendered
@@ -582,8 +582,8 @@ def _make_fig_preview(
     photo_axes_bounds: tuple[float, float, float, float],
     stats: StatsDict,
 ) -> None:
-    """Show a preview (using `plt.show()`) of the first page of the PDF that would be
-    created if :func:`make_pdf` were run. Private function.
+    """Show a preview (using :func:`plt.show`) of the first page of the PDF that would
+    be created if :func:`make_pdf` were run. Private function.
 
     This function is called internally by ``make_pdf_preview`` to gauge how the output
     will look in response to tweaking certain parameters (e.g., ``name_font_size``),
