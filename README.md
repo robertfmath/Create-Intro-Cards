@@ -21,7 +21,7 @@ The input is a Pandas DataFrame, where rows represent individuals and columns th
   <img src="https://github.com/robertfmath/Create-Intro-Cards/blob/main/docs/source/_static/images/example_people_data.png?raw=true" alt="An example of the structure of the input Pandas DataFrame" style="max-width: 100%; height: auto;">
 </p>
 
-These custom columns are used to generate a series of "column name: attribute value" pairings (e.g., "Hometown: New York, NY") for each individual, which appears below their name on their intro card. If an individual doesn't have a value listed for any custom column, that column's "column name: attribute value" pairing is omitted from their card.
+These custom columns are used to generate a series of "column name: attribute value" pairings (e.g., "Hometown: New York, NY") for each individual, which appear below their name on their intro card. If an individual doesn't have a value listed for any custom column, that column's "column name: attribute value" pairing is omitted from their card.
 
 The generated PDF contains all individuals' intro cards, arranged four per page. It's a simple way to transform a dataset of individuals' attributes&mdash;collected from sources such as surveys&mdash;into a fun, easily shareable visual summary.
 
