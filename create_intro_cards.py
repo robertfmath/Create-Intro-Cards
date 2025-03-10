@@ -50,7 +50,7 @@ def make_pdf(
     desc_font_size: float = 16,
     photo_axes_bounds: tuple[float, float, float, float] = (0.02, 0.02, 0.3, 0.93),
 ) -> StatsDict:
-    """Generate a PDF containing intro cards for all individuals in ``people_data``.
+    r"""Generate a PDF containing intro cards for all individuals in ``people_data``.
 
     This is entry point of the package. It generates a PDF, where each page of the PDF
     is a single Matplotlib figure, which is itself composed of four individuals' intro
@@ -247,11 +247,11 @@ def make_pdf(
         plt.close(fig="all")
 
         logger.info(
-            f"\n\nComplete! See the directory `{path_to_output_dir}` for the PDF."
+            f"\n\nComplete! See the directory `{path_to_output_dir}` for the PDF.\n"
         )
         if stats["people_with_photo_warnings"]:
             logger.info(
-                "\nWARNING: Photos could not be found or read at the specified paths "
+                "WARNING: Photos could not be found or read at the specified paths "
                 "for the name(s) below. Please confirm the path(s) are valid and that "
                 "the photo(s) are of a format supported by PIL.\n"
             )
@@ -564,6 +564,7 @@ def _make_figs(
                     stats=stats,
                 )
             fig.savefig(os.path.join(path_to_output_dir, f"figure{i + 1}.png"))
+            plt.close(fig)
             start_ind += 4
 
 
@@ -1019,7 +1020,7 @@ def _ceil_div(dividend: float, divisor: float) -> float:
 def _format_data_and_derive_full_names(
     df: pd.DataFrame, first_name_col: str, last_name_col: str, photo_path_col: str
 ) -> pd.DataFrame:
-    """Format DataFrame for Mathtex compatibility and create Full Name column. Private
+    r"""Format DataFrame for Mathtex compatibility and create Full Name column. Private
     function.
 
     This function replaces null values with empty strings, converts all values to
