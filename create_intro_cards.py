@@ -244,7 +244,6 @@ def make_pdf(
             save_all=True,
             append_images=(Image.open(path) for path in sorted_figure_image_paths[1:]),
         )
-        plt.close(fig="all")
 
         logger.info(
             f"\n\nComplete! See the directory `{path_to_output_dir}` for the PDF.\n"
