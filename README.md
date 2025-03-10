@@ -53,7 +53,14 @@ import pandas as pd
 
 people_data = pd.read_csv("path/to/people/data.csv")
 
-make_pdf(people_data, "First Name", "Last Name", "Photo Path", "path/to/default/photo.png", "path/to/output/dir")
+make_pdf(
+    people_data,
+    "First Name",
+    "Last Name",
+    "Photo Path",
+    "path/to/default/photo.png",
+    "path/to/output/dir",
+)
 ```
 
 The output directory will contain the PDF, PNG images of each page of the PDF, and a log file indicating the names and photo availability statuses of all individuals who had an intro card created.
@@ -61,15 +68,34 @@ The output directory will contain the PDF, PNG images of each page of the PDF, a
 `make_pdf` also provides a host of optional keyword arguments to tweak the default layout of the intro cards, from font sizes and text placement to photo boundaries and more.
 
 ```python
-make_pdf(people_data, "First Name", "Last Name", "Photo Path", "path/to/default/photo.png", "path/to/output/dir",
-         figure_size=(20, 10), name_x_coord=0.40, desc_font_size=14, photo_axes_bounds=(0.01, 0.02, 0.2, 0.92))
+make_pdf(
+    people_data,
+    "First Name",
+    "Last Name",
+    "Photo Path",
+    "path/to/default/photo.png",
+    "path/to/output/dir",
+    figure_size=(20, 10),
+    name_x_coord=0.40,
+    desc_font_size=14,
+    photo_axes_bounds=(0.01, 0.02, 0.2, 0.92),
+)
 ```
 
 To see how the different keyword arguments affect the appearance of the intro cards, a utility function called `make_pdf_preview` is provided. This function, which must be run in a Jupyter environment, displays a mock-up of the first page of the PDF that would otherwise be created if `make_pdf` were run with the same arguments (minus `path_to_output_dir`). Because it processes only a subset of the dataset, it runs significantly faster than `make_pdf` and is ideal for prototyping.
 
 ```python
-make_pdf_preview(people_data, "First Name", "Last Name", "Photo Path", "path/to/default/photo.png", 
-                 figure_size=(20, 10), name_x_coord=0.40, desc_font_size=14, photo_axes_bounds=(0.01, 0.02, 0.2, 0.92))
+make_pdf_preview(
+    people_data,
+    "First Name",
+    "Last Name",
+    "Photo Path",
+    "path/to/default/photo.png",
+    figure_size=(20, 10),
+    name_x_coord=0.40,
+    desc_font_size=14,
+    photo_axes_bounds=(0.01, 0.02, 0.2, 0.92),
+)
 ```
 
 ## Documentation
