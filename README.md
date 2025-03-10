@@ -63,7 +63,7 @@ make_pdf(
 )
 ```
 
-The output directory will contain the PDF, PNG images of each page of the PDF, and a log file indicating the names and photo availability statuses of all individuals who had an intro card created.
+The output directory will contain the PDF, PNG images of each page of the PDF, and a log file indicating the names and photo availability statuses of all individuals who had an intro card created. The entire process typically takes only a few minutes or less, depending on the number of individuals, number of custom attributes, photo sizes, and hardware.
 
 `make_pdf` also provides a host of optional keyword arguments to tweak the default layout of the intro cards, from font sizes and text placement to photo boundaries and more.
 
