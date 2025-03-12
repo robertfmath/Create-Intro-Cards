@@ -11,7 +11,7 @@ sys.path.insert(0, os.path.abspath("../.."))
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "Create-Intro-Cards"
+project = "create-intro-cards"
 copyright = "2025, Bobby Math"
 author = "Bobby Math"
 

@@ -38,8 +38,8 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://www.github.com/robertfmath/Create-Intro-Cards"
-Documentation = "https://robertfmath.github.io/Create-Intro-Cards"
+Homepage = "https://www.github.com/robertfmath/create-intro-cards"
+Documentation = "https://robertfmath.github.io/create-intro-cards"
 
 [tool.ruff]
 line-length = 88

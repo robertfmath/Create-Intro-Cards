@@ -1,4 +1,4 @@
-Create-Intro-Cards
+create-intro-cards
 ==================
 
 .. automodule:: create_intro_cards

@@ -1,5 +1,5 @@
-Welcome to Create-Intro-Cards's documentation!
-==============================================
+Welcome to the documentation for create-intro-cards!
+====================================================
 
 .. toctree::
    :maxdepth: 2

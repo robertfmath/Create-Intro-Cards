@@ -1,24 +1,24 @@
-# ![logo](https://github.com/robertfmath/Create-Intro-Cards/blob/main/docs/source/_static/images/logo.svg?raw=true)
+# ![logo](https://github.com/robertfmath/create-intro-cards/blob/main/docs/source/_static/images/logo.svg?raw=true)
 
 <div align="center">
 
-[![CI Status](https://github.com/robertfmath/Create-Intro-Cards/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/robertfmath/Create-Intro-Cards/actions/workflows/ci.yml)
+[![CI Status](https://github.com/robertfmath/create-intro-cards/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/robertfmath/create-intro-cards/actions/workflows/ci.yml)
 [![PyPI Latest Release](https://img.shields.io/pypi/v/create-intro-cards.svg)](https://pypi.org/project/create-intro-cards/)
-[![License](https://img.shields.io/badge/License-BSD_3--Clause-f72d23.svg)](https://github.com/robertfmath/Create-Intro-Cards/blob/main/LICENSE.txt)
-[![Documentation](https://img.shields.io/badge/Documentation-e3e300)](https://robertfmath.github.io/Create-Intro-Cards)
+[![License](https://img.shields.io/badge/License-BSD_3--Clause-f72d23.svg)](https://github.com/robertfmath/create-intro-cards/blob/main/LICENSE.txt)
+[![Documentation](https://img.shields.io/badge/Documentation-e3e300)](https://robertfmath.github.io/create-intro-cards)
 
 </div>
 
 `create-intro-cards` is a Python package that converts a dataset of individuals' names, photos, and custom attributes into a PDF of “intro cards” that describe each individual—all with a single function call. Each intro card displays a person's name, a photo, and a series of attributes based on custom columns in the dataset.
 
 <p align="center">
-  <img src="https://github.com/robertfmath/Create-Intro-Cards/blob/main/docs/source/_static/images/example_output_page.png?raw=true" alt="An example of one page of output in the PDF" style="max-width: 100%; height: auto;">
+  <img src="https://github.com/robertfmath/create-intro-cards/blob/main/docs/source/_static/images/example_output_page.png?raw=true" alt="An example of one page of output in the PDF" style="max-width: 100%; height: auto;">
 </p>
 
 The input is a Pandas DataFrame, where rows represent individuals and columns their attributes. Columns containing individuals' first names, last names, and paths to photos are required, but the content (and number) of other columns can be freely customized.
 
 <p align="center">
-  <img src="https://github.com/robertfmath/Create-Intro-Cards/blob/main/docs/source/_static/images/example_people_data.png?raw=true" alt="An example of the structure of the input Pandas DataFrame" style="max-width: 100%; height: auto;">
+  <img src="https://github.com/robertfmath/create-intro-cards/blob/main/docs/source/_static/images/example_people_data.png?raw=true" alt="An example of the structure of the input Pandas DataFrame" style="max-width: 100%; height: auto;">
 </p>
 
 These custom columns are used to generate a series of "column name: attribute value" pairings (e.g., "Hometown: New York, NY") for each individual, which appear below their name on their intro card. If an individual doesn't have a value listed for any custom column, that column's "column name: attribute value" pairing is omitted from their card.
@@ -100,4 +100,4 @@ make_pdf_preview(
 
 ## Documentation
 
-For full documentation, please see [here](https://robertfmath.github.io/Create-Intro-Cards).
+For full documentation, please see [here](https://robertfmath.github.io/create-intro-cards).
