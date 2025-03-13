@@ -1,4 +1,4 @@
-# ![logo](https://github.com/robertfmath/create-intro-cards/blob/main/docs/source/_static/images/logo.svg?raw=true)
+# ![logo](https://github.com/robertfmath/create-intro-cards/blob/main/docs/source/_static/images/logo_create-intro-cards.svg?raw=true)
 
 <div align="center">
 
