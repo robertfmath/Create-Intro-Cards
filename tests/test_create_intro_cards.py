@@ -2,6 +2,7 @@ from datetime import datetime
 import os
 import shutil
 import unittest
+from unittest.mock import patch
 
 import pandas as pd
 from pypdf import PdfReader
@@ -16,11 +17,19 @@ class TestMakePDF(unittest.TestCase):
     path_to_default_photo = "./tests/test_photos/test_default_photo.jpg"
     path_to_output_dir = "./tests/test_output"
     delete_output = True
-    local_timestamp = datetime.now().strftime("%Y%m%dT%H%M%S")
-    path_to_log_file = os.path.join(path_to_output_dir, f"names_{local_timestamp}.log")
 
     @classmethod
     def setUpClass(cls):
+        cls.patcher = patch("create_intro_cards.datetime")
+        cls.mock_datetime = cls.patcher.start()
+        cls.fake_now = datetime(2025, 3, 12, 10, 24, 16)
+        cls.mock_datetime.now.return_value = cls.fake_now
+
+        cls.timestamp_str = cls.fake_now.strftime("%Y%m%dT%H%M%S")
+        cls.path_to_log_file = os.path.join(
+            cls.path_to_output_dir, f"names_{cls.timestamp_str}.log"
+        )
+
         cls.stats = create_intro_cards.make_pdf(
             cls.people_data,
             "First Name",
@@ -34,6 +43,7 @@ class TestMakePDF(unittest.TestCase):
     def tearDownClass(cls):
         if cls.delete_output:
             shutil.rmtree(cls.path_to_output_dir)
+        cls.patcher.stop()
 
     def test_pdf_file_created(self):
         self.assertTrue(
