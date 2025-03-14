@@ -74,11 +74,11 @@ def make_pdf(
 
     The output PDF is saved down in ``path_to_output_dir``. Also in this directory are
     the constituent pages of the PDF (PNG images of the Matplotlib figures, as rendered
-    using the Agg backend) and a logging file that denotes the names and photo
-    availability statuses of all the individuals who had an intro card created.
-    Depending on the number of individuals, the file size of the PDF might be quite
-    large; to reduce it (at the expense of resolution), scale down each number in
-    ``figure_size``, ``name_font_size``, and ``desc_font_size`` by a common factor.
+    using the Agg backend) and a log file that denotes the names and photo availability
+    statuses of all the individuals who had an intro card created. Depending on the
+    number of individuals, the file size of the PDF might be quite large; to reduce it
+    (at the expense of resolution), scale down each number in ``figure_size``,
+    ``name_font_size``, and ``desc_font_size`` by a common factor.
 
     The function returns a dictionary with metadata pertaining to the number of intro
     cards that were created, the number of people for whom cards needed to be generated,
@@ -114,9 +114,9 @@ def make_pdf(
     :type path_to_default_photo: str
     :param path_to_output_dir: The path to the output directory to use. The output
         directory will store the final PDF, its constituent pages/Matplob figures, and
-        the logging file. If it does not exist, it will be created at runtime. If
-        specifying this argument using a single-backlash separator, make sure to use a
-        raw string., defaults to 'intro_cards_output'
+        the log file. If it does not exist, it will be created at runtime. If specifying
+        this argument using a single-backlash separator, make sure to use a raw string.,
+        defaults to 'intro_cards_output'
     :type path_to_output_dir: str, optional
     :param figure_size: The size of the figure that Matplotlib will create when plotting
         a batch of four intro cards on it. The first entry in this tuple is the width of
@@ -280,7 +280,7 @@ def make_pdf_preview(
     photo_axes_bounds: tuple[float, float, float, float] = (0.02, 0.02, 0.3, 0.93),
 ) -> StatsDict:
     """Show a preview in a Jupyter environment of the first page of the PDF that would
-    be created if :func:`make_pdf` were run, and print logging output to the console.
+    be created if :func:`make_pdf` were run, and print log output to the console.
 
     This function is helpful to gauge how the output will look in response to tweaking
     certain parameters (e.g., ``name_font_size``) without having to actually iterate
@@ -486,9 +486,8 @@ def _make_figs(
     :type path_to_default_photo: str
     :param path_to_output_dir: The path to the output directory to use. The output
         directory will store the final PDF, its constituent pages/Matplob figures, and
-        the logging file. If it does not exist, it will be created at runtime. If
-        specifying this argument using a single-backlash separator, make sure to use a
-        raw string.
+        the log file. If it does not exist, it will be created at runtime. If specifying
+        this argument using a single-backlash separator, make sure to use a raw string.
     :type path_to_output_dir: str
     :param figure_size: The size of the figure that Matplotlib will create when plotting
         a batch of four intro cards on it. The first entry in this tuple is the width of
@@ -854,14 +853,14 @@ def _make_card(
     ax_inset.spines[["top", "bottom", "left", "right"]].set_color("black")
     ax_inset.spines[["top", "bottom", "left", "right"]].set_linewidth(0.1)
 
-    current_progress_for_logging_message = (
+    current_progress_for_log_message = (
         f"[{stats['number_of_cards_created'] + 1}/{stats['number_of_cards_to_create']}]"
     )
-    person_logging_message = (
-        f"{current_progress_for_logging_message} {person_status} "
+    person_log_message = (
+        f"{current_progress_for_log_message} {person_status} "
         f": {row['Full Name']} - {person_status_msg}"
     )
-    logger.info(person_logging_message)
+    logger.info(person_log_message)
     stats["number_of_cards_created"] += 1
 
 
@@ -1038,7 +1037,8 @@ def _format_data_and_derive_full_names(
     :type last_name_col: str
     :param photo_path_col: Name of the column containing photo file paths
     :type photo_path_col: str
-    :return: Processed DataFrame with Mathtext-compatible formatting and Full Name column
+    :return: Processed DataFrame with Mathtext-compatible formatting and Full Name
+        column
     :rtype: pd.DataFrame
     """
     df = df.fillna("").astype(str).apply(lambda x: x.str.strip())
