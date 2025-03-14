@@ -686,7 +686,7 @@ def _make_fig_preview(
                 photo_axes_bounds,
                 stats=stats,
             )
-        plt.show()  # Needs to be called explicitly to properly render mathtext in bold
+        plt.show()  # Needs to be called explicitly to properly render Mathtext in bold
 
 
 def _make_card(
@@ -873,7 +873,7 @@ def _get_description_string_from_row(
     to names or photo path). Private function.
 
     Each "column name: attribute value" pairing is separated by a new line, and each
-    "column name" is bolded (by wrapping it in appropriate Mathtex characters). Text on
+    "column name" is bolded (by wrapping it in appropriate Mathtext characters). Text on
     any given line is wrapped, such that it approaches—but does not touch—the right
     border of the card. If an individual's "attribute value" is left blank, then that
     particular "column name: attribute value" pairing will be omitted from the
@@ -1019,14 +1019,14 @@ def _ceil_div(dividend: float, divisor: float) -> float:
 def _format_data_and_derive_full_names(
     df: pd.DataFrame, first_name_col: str, last_name_col: str, photo_path_col: str
 ) -> pd.DataFrame:
-    r"""Format DataFrame for Mathtex compatibility and create Full Name column. Private
+    r"""Format DataFrame for Mathtext compatibility and create Full Name column. Private
     function.
 
     This function replaces null values with empty strings, converts all values to
     strings, and trims whitespace. It also creates a "Full Name" column by combining the
-    first and last name columns. Custom columns are formatted for MathTeX compatibility
+    first and last name columns. Custom columns are formatted for Mathtext compatibility
     by removing forbidden characters (``~``, ``^``, ``\``) from column names, escaping
-    special MathTeX characters (space, ``#``, ``$``, ``%``, ``_``, ``{``, ``}``) in
+    special Mathtext characters (space, ``#``, ``$``, ``%``, ``_``, ``{``, ``}``) in
     column names, and escaping dollar signs (``$``) in column values. Name-related and
     photo path columns retain their original column names.
 
@@ -1038,7 +1038,7 @@ def _format_data_and_derive_full_names(
     :type last_name_col: str
     :param photo_path_col: Name of the column containing photo file paths
     :type photo_path_col: str
-    :return: Processed DataFrame with Mathtex-compatible formatting and Full Name column
+    :return: Processed DataFrame with Mathtext-compatible formatting and Full Name column
     :rtype: pd.DataFrame
     """
     df = df.fillna("").astype(str).apply(lambda x: x.str.strip())
@@ -1047,7 +1047,7 @@ def _format_data_and_derive_full_names(
 
     name_and_photo_cols = ["Full Name", first_name_col, last_name_col, photo_path_col]
 
-    # Format custom columns for Mathtex
+    # Format custom columns for Mathtext
     forbidden_chars_in_col_names = ["~", "^", "\\"]
     prepend_with_backslash_in_col_names = [" ", "#", "$", "%", "_", "{", "}"]
 
