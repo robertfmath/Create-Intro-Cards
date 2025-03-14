@@ -59,7 +59,7 @@ make_pdf(
     "Last Name",
     "Photo Path",
     "path/to/default/photo.png",
-    "path/to/output/dir",
+    "path/to/output/dir"
 )
 ```
 
@@ -78,7 +78,7 @@ make_pdf(
     figure_size=(20, 10),
     name_x_coord=0.40,
     desc_font_size=14,
-    photo_axes_bounds=(0.01, 0.02, 0.2, 0.92),
+    photo_axes_bounds=(0.01, 0.02, 0.2, 0.92)
 )
 ```
 
@@ -94,7 +94,7 @@ make_pdf_preview(
     figure_size=(20, 10),
     name_x_coord=0.40,
     desc_font_size=14,
-    photo_axes_bounds=(0.01, 0.02, 0.2, 0.92),
+    photo_axes_bounds=(0.01, 0.02, 0.2, 0.92)
 )
 ```
 
