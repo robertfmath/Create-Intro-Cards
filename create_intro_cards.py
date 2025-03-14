@@ -1025,10 +1025,10 @@ def _format_data_and_derive_full_names(
     This function replaces null values with empty strings, converts all values to
     strings, and trims whitespace. It also creates a "Full Name" column by combining the
     first and last name columns. Custom columns are formatted for MathTeX compatibility
-    by removing forbidden characters (~, ^, \) from column names, escaping special
-    MathTeX characters (space, #, $, %, _, {, }) in column names, and escaping dollar
-    signs ($) in column values. Name-related and photo path columns retain their
-    original column names.
+    by removing forbidden characters (``~``, ``^``, ``\``) from column names, escaping
+    special MathTeX characters (space, ``#``, ``$``, ``%``, ``_``, ``{``, ``}``) in
+    column names, and escaping dollar signs (``$``) in column values. Name-related and
+    photo path columns retain their original column names.
 
     :param df: DataFrame to process, containing individual records with their attributes
     :type df: pd.DataFrame
