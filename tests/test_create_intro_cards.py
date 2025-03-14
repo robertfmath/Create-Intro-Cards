@@ -349,7 +349,7 @@ class TestFormatDataAndDeriveFullNames(unittest.TestCase):
         self.assertIn(" First Name ", result.columns)
         self.assertIn(" Photo Path ", result.columns)
 
-    def test_mathtex_formatting_for_custom_column_names(self):
+    def test_mathtext_formatting_for_custom_column_names(self):
         df = pd.DataFrame(
             {
                 " First Name": ["John"],
